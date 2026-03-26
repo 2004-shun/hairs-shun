@@ -83,23 +83,144 @@
   
 <div class="container">
 
+ <!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>美容室｜ココナッツ中山店</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+    }
+
+    header {
+      background: black;
+      color: white;
+      padding: 25px;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .box, .shop {
+      background: white;
+      margin: 20px auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: black;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+    }
+
+    .subbtn {
+      background: #555;
+    }
+
+    /* ←これが横並びのやつ */
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .btn-group a {
+      flex: 1;
+      max-width: 150px;
+    }
+
+    footer {
+      margin: 30px 0;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>美容室｜ココナッツ中山店</h1>
+</header>
+
+<img src="coconut1.jpg">
+
+<div class="container">
+
+  <div class="box">
+    <h2>店舗情報</h2>
+    <p>神奈川県 横浜市 緑区</p>
+    <p>最寄り：中山駅</p>
+  </div>
+
+  <div class="box">
+    <h2>予約</h2>
+    <p>📞 045-935-7066</p>
+
+    <!-- 横並び -->
+    <div class="btn-group">
+      <a href="tel:0459357066" class="btn">電話</a>
+      <a href="https://beauty.hotpepper.jp/" class="btn">ホットペッパー</a>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>アクセス</h2>
+    <p>中山駅から徒歩３分</p>
+  </div>
+
+  <a href="index.html" class="btn subbtn">トップに戻る</a>
+
+</div>
+
+<!-- 支店紹介 -->
+<div class="container">
+
   <h2>支店｜美容室の紹介</h2>
 
   <div class="shop">
     <h2>美容室 ココナッツ中山店</h2>
     <p>神奈川県 横浜市 緑区　[最寄り：中山駅]</p>
-    <a href="tel:0459357066">電話で予約</a>
-    <a href="coconut.html" class="btn" style="background:#555;">詳細はこちら</a>
-</div>
+
+    <div class="btn-group">
+      <a href="tel:0459357066" class="btn">電話</a>
+    </div>
+
+    <a href="coconut.html" class="btn subbtn">詳細はこちら</a>
   </div>
 
   <div class="shop">
     <h2>美容室 ビューティーライフ緑園店</h2>
     <p>神奈川県 横浜市 泉区　[最寄り：緑園都市駅・南万騎が原駅]</p>
-   <a href="tel:0454108700" class="btn" style="margin-bottom:10px;">電話で予約</a><br>
-<a href="https://beauty.hotpepper.jp/slnH000435742/" class="btn">ホットペッパーで予約</a>
-    <a href="ryokuen.html" class="btn" style="background:#555;">詳細はこちら</a>
-</div>
+
+    <!-- 横並び -->
+    <div class="btn-group">
+      <a href="tel:0454108700" class="btn">電話</a>
+      <a href="https://beauty.hotpepper.jp/slnH000435742/" class="btn">ホットペッパー</a>
+    </div>
+
+    <!-- 下に詳細 -->
+    <a href="ryokuen.html" class="btn subbtn">詳細はこちら</a>
   </div>
 
 </div>
