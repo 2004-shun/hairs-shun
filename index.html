@@ -2,8 +2,6 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-
-<!-- ★これ超重要（スマホ対応） -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ヘアーズ旬</title>
@@ -22,10 +20,14 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 25px 20px;
+  padding: 20px;
   color: white;
   z-index: 300;
   transition: 0.3s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .overlay-header.scrolled {
@@ -40,16 +42,16 @@ body {
 
 /* ===== ハンバーガー ===== */
 .hamburger {
-  position: fixed; /* ←重要 */
-  top: 20px;
+  position: absolute;
   right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 32px;
   height: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  z-index: 400;
 }
 
 .hamburger span {
@@ -97,10 +99,19 @@ body {
   border-bottom: 1px solid #eee;
 }
 
+/* ×ボタン */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
 /* ===== 画像 ===== */
 .hero img {
   width: 100%;
-  height: auto; /* ←見切れ防止 */
+  height: auto;
 }
 
 /* ===== コンテンツ ===== */
@@ -116,10 +127,6 @@ body {
   max-width: 400px;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.shop h2 {
-  margin-bottom: 10px;
 }
 
 .shop p {
@@ -150,19 +157,7 @@ body {
   flex-wrap: wrap;
 }
 
-.btn-group a {
-  flex: 1;
-  max-width: 150px;
-}
-
-footer {
-  margin-top: 30px;
-  padding: 20px;
-  font-size: 12px;
-  color: #999;
-}
-
-/* ===== スマホ調整 ===== */
+/* ===== スマホ ===== */
 @media screen and (max-width: 600px) {
 
   .overlay-header h1 {
@@ -172,13 +167,10 @@ footer {
   .hamburger {
     width: 28px;
     height: 20px;
-    top: 15px;
-    right: 15px;
   }
 
   .shop {
     width: 95%;
-    padding: 20px;
   }
 
 }
@@ -190,17 +182,18 @@ footer {
 <!-- ヘッダー -->
 <div class="overlay-header" id="header">
   <h1>ヘアーズ旬</h1>
-</div>
 
-<!-- ハンバーガー -->
-<div class="hamburger" id="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </div>
 
 <!-- サイドバー -->
 <div id="sidebar">
+  <div class="close-btn" id="closeBtn">×</div>
+
   <a href="index.html">ホーム</a>
   <a href="coconut.html">ココナッツ中山店</a>
   <a href="ryokuen.html">ビューティーライフ緑園店</a>
@@ -251,13 +244,22 @@ footer {
 <script>
 const hamburger = document.getElementById('hamburger');
 const sidebar = document.getElementById('sidebar');
+const closeBtn = document.getElementById('closeBtn');
 const header = document.getElementById('header');
 
+/* 開く */
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   sidebar.classList.toggle('active');
 });
 
+/* 閉じる（×） */
+closeBtn.addEventListener('click', () => {
+  sidebar.classList.remove('active');
+  hamburger.classList.remove('active');
+});
+
+/* スクロール */
 window.addEventListener('scroll', () => {
   if(window.scrollY > 50){
     header.classList.add('scrolled');
