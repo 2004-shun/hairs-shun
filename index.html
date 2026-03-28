@@ -13,20 +13,18 @@ body {
   background-color: #f5f5f5;
   text-align: center;
   overflow-x: hidden;
+  padding-bottom: 70px; /* ←固定ボタン分の余白（重要） */
 }
 
 /* ===== ヘッダー ===== */
 .overlay-header {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
   height: 70px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: transparent;
   color: white;
   z-index: 300;
@@ -41,7 +39,6 @@ body {
 .overlay-header h1 {
   margin: 0;
   font-size: 26px;
-  letter-spacing: 2px;
 }
 
 .overlay-header.scrolled h1 {
@@ -59,13 +56,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  cursor: pointer;
 }
 
 .hamburger span {
   height: 4px;
   background: white;
-  border-radius: 2px;
   transition: 0.3s;
 }
 
@@ -73,7 +68,6 @@ body {
   background: black;
 }
 
-/* × */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px,5px);
 }
@@ -92,29 +86,24 @@ body {
   width: 260px;
   height: 100%;
   background: white;
-  transition: 0.4s ease;
+  transition: 0.4s;
   z-index: 400;
   padding-top: 80px;
   text-align: left;
 }
 
-#sidebar.active {
-  right: 0;
-}
+#sidebar.active { right: 0; }
 
 #sidebar a {
   display: block;
-  padding: 15px 20px;
+  padding: 15px;
   text-decoration: none;
   color: black;
-  border-bottom: 1px solid #eee;
 }
 
-/* ===== 背景暗転 ===== */
+/* ===== 背景 ===== */
 #overlay {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.4);
@@ -132,7 +121,6 @@ body {
 /* ===== 画像 ===== */
 .hero img {
   width: 100%;
-  height: auto;
 }
 
 /* ===== コンテンツ ===== */
@@ -140,7 +128,6 @@ body {
   padding: 20px;
 }
 
-/* カード（今までのやつ） */
 .shop {
   background: white;
   margin: 20px auto;
@@ -151,43 +138,30 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.shop h2 {
-  margin-bottom: 10px;
-}
-
 .shop p {
   font-size: 14px;
   color: #555;
 }
 
-/* ボタン（今までのやつ） */
 .btn {
   display: inline-block;
   margin-top: 10px;
   padding: 10px 20px;
   background: black;
   color: white;
-  text-decoration: none;
   border-radius: 30px;
-  font-size: 14px;
+  text-decoration: none;
 }
 
 .subbtn {
   background: #555;
 }
 
-/* 横並び */
 .btn-group {
   display: flex;
-  justify-content: center;
   gap: 10px;
-  margin-top: 10px;
+  justify-content: center;
   flex-wrap: wrap;
-}
-
-.btn-group a {
-  flex: 1;
-  max-width: 150px;
 }
 
 /* ===== ギャラリー ===== */
@@ -195,7 +169,6 @@ body {
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap: 8px;
-  margin-top: 20px;
 }
 
 .gallery img {
@@ -223,20 +196,8 @@ body {
   z-index: 500;
 }
 
-/* フッター */
-footer {
-  margin-top: 30px;
-  padding: 20px;
-  font-size: 12px;
-  color: #999;
-}
-
-/* ===== スマホ ===== */
+/* スマホ */
 @media(max-width:600px){
-  .overlay-header h1 {
-    font-size: 20px;
-  }
-
   .gallery {
     grid-template-columns: repeat(2,1fr);
   }
@@ -251,13 +212,10 @@ footer {
   <h1>ヘアーズ旬</h1>
 
   <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span>
   </div>
 </div>
 
-<!-- 背景 -->
 <div id="overlay"></div>
 
 <!-- サイドバー -->
@@ -267,7 +225,7 @@ footer {
   <a href="ryokuen.html">ビューティーライフ緑園店</a>
 </div>
 
-<!-- メイン画像 -->
+<!-- 画像 -->
 <div class="hero">
   <img src="shun3.jpg">
 </div>
@@ -278,36 +236,7 @@ footer {
   <div class="shop">
     <h2>理容室 ヘアーズ旬</h2>
     <p>神奈川県 横浜市 瀬谷区　[最寄り：三ツ境駅]</p>
-
-    <div class="btn-group">
-      <a href="tel:0453677650" class="btn">電話で予約</a>
-    </div>
-  </div>
-
-  <!-- 支店 -->
-  <h2>支店｜美容室の紹介</h2>
-
-  <div class="shop">
-    <h2>美容室 ココナッツ中山店</h2>
-    <p>神奈川県 横浜市 緑区　[最寄り：中山駅]</p>
-
-    <div class="btn-group">
-      <a href="tel:0459357066" class="btn">電話で予約</a>
-    </div>
-
-    <a href="coconut.html" class="btn subbtn">詳細はこちら</a>
-  </div>
-
-  <div class="shop">
-    <h2>美容室 ビューティーライフ緑園店</h2>
-    <p>神奈川県 横浜市 泉区　[最寄り：緑園都市駅・南万騎が原駅]</p>
-
-    <div class="btn-group">
-      <a href="tel:0454108700" class="btn">電話で予約</a>
-      <a href="https://beauty.hotpepper.jp/slnH000435742/" class="btn">ホットペッパーで予約</a>
-    </div>
-
-    <a href="ryokuen.html" class="btn subbtn">詳細はこちら</a>
+    <a href="tel:0453677650" class="btn">電話で予約</a>
   </div>
 
   <!-- ギャラリー -->
@@ -324,7 +253,30 @@ footer {
   <!-- マップ -->
   <h2>アクセス</h2>
   <div class="map">
-    <iframe src="https://www.google.com/maps?q=横浜市瀬谷区&output=embed" width="100%" height="250"></iframe>
+    <iframe src="https://maps.app.goo.gl/3v4SzxecX4fMDrXG9" width="100%" height="250"></iframe>
+  </div>
+
+  <!-- 支店（←一番下） -->
+  <h2>支店｜美容室の紹介</h2>
+
+  <div class="shop">
+    <h2>美容室 ココナッツ中山店</h2>
+    <p>神奈川県 横浜市 緑区　[最寄り：中山駅]</p>
+    <a href="tel:0459357066" class="btn">電話で予約</a>
+    <br>
+    <a href="coconut.html" class="btn subbtn">詳細はこちら</a>
+  </div>
+
+  <div class="shop">
+    <h2>美容室 ビューティーライフ緑園店</h2>
+    <p>神奈川県 横浜市 泉区　[最寄り：緑園都市駅・南万騎が原駅]</p>
+
+    <div class="btn-group">
+      <a href="tel:0454108700" class="btn">電話で予約</a>
+      <a href="https://beauty.hotpepper.jp/slnH000435742/" class="btn">ホットペッパーで予約</a>
+    </div>
+
+    <a href="ryokuen.html" class="btn subbtn">詳細はこちら</a>
   </div>
 
 </div>
