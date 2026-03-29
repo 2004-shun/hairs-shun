@@ -194,20 +194,47 @@ body {
   margin: 0 auto;
 }
 
-/* ===== 固定予約ボタン ===== */
-.fixed-btn {
+/* ===== 下固定バー ===== */
+.fixed-bar {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: black;
-  color: white;
-  padding: 15px;
-  font-size: 16px;
-  text-decoration: none;
-  z-index: 9999; /* ←最強 */
+  display: flex;
+  z-index: 9999;
+}
+
+/* インスタ（左1/3） */
+.insta-btn {
+  width: 33.33%;
   text-align: center;
+  padding: 15px 0;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+
+  /* グラデで軽くする */
+  background: linear-gradient(45deg, #feda75, #d62976, #962fbf);
+}
+
+/* 電話（右2/3） */
+.tel-btn {
+  width: 66.66%;
+  text-align: center;
+  padding: 15px 0;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+
+  /* 黒→柔らかい色に変更 */
+  background: #444;
+}
+
+/* 上に少し丸み */
+.fixed-bar a:first-child {
   border-top-left-radius: 15px;
+}
+.fixed-bar a:last-child {
   border-top-right-radius: 15px;
 }
 
@@ -301,10 +328,17 @@ body {
   © ヘアーズ旬
 </footer>
 
-<!-- 固定予約 -->
-<a href="tel:0453677650" class="fixed-btn">
-  【ヘアーズ旬】📞電話で予約する
-</a>
+<div class="fixed-bar">
+  <!-- インスタ -->
+  <a href="https://www.instagram.com/（ここにID）" target="_blank" class="insta-btn">
+    📸 Instagram
+  </a>
+
+  <!-- 電話 -->
+  <a href="tel:0453677650" class="tel-btn">
+    📞 電話で予約
+  </a>
+</div>
 
 <script>
 const hamburger = document.getElementById('hamburger');
