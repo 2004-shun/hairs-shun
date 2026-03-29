@@ -204,29 +204,26 @@ body {
   z-index: 9999;
 }
 
-/* インスタ */
-.insta-btn {
+/* 共通 */
+.insta-btn,
+.tel-btn {
   width: 50%;
-  text-align: center;
-  padding: 15px 0;
+  display: flex;              /* ←これ追加 */
+  align-items: center;        /* ←縦中央 */
+  justify-content: center;    /* ←横中央 */
   text-decoration: none;
   color: white;
   font-size: 16px;
+  height: 60px;               /* ←高さ固定 */
+}
 
-  /* グラデで軽くする */
+/* インスタ */
+.insta-btn {
   background: linear-gradient(45deg, #feda75, #d62976, #962fbf);
 }
 
 /* 電話 */
 .tel-btn {
-  width: 50%;
-  text-align: center;
-  padding: 15px 0;
-  text-decoration: none;
-  color: white;
-  font-size: 16px;
-
-  /* 黒→柔らかい色に変更 */
   background: #444;
 }
 
