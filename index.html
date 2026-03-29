@@ -16,7 +16,7 @@ body {
   padding-bottom: 80px;
 }
 
-/* ===== ヘッダー（固定・白） ===== */
+/* ===== ヘッダー（常に白） ===== */
 .overlay-header {
   position: fixed;
   top: 0;
@@ -25,7 +25,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: rgba(255,255,255,0.95);
   color: black;
   z-index: 10000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -34,7 +34,6 @@ body {
 .overlay-header h1 {
   margin: 0;
   font-size: 26px;
-  color: black;
 }
 
 /* ===== ハンバーガー ===== */
@@ -76,7 +75,7 @@ body {
   height: 100%;
   background: white;
   transition: 0.4s;
-  z-index: 9000;
+  z-index: 1000;
   padding-top: 80px;
   text-align: left;
 }
@@ -90,16 +89,16 @@ body {
   color: black;
 }
 
-/* ===== 背景（暗さ調整済み） ===== */
+/* ===== 背景（暗くするやつ） ===== */
 #overlay {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.4);
   opacity: 0;
   visibility: hidden;
   transition: 0.3s;
-  z-index: 8000;
+  z-index: 500;
 }
 
 #overlay.active {
@@ -110,10 +109,9 @@ body {
 /* ===== スライド ===== */
 .hero {
   position: relative;
-  width: 100%;
-  height: 500px; /* ←少し縦長 */
-  margin-top: 70px; /* ←ヘッダー分 */
+  height: 55vh; /* ←縦長にした */
   overflow: hidden;
+  margin-top: 70px;
 }
 
 .slide {
@@ -121,19 +119,28 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  top: 0;
-  left: 0;
   opacity: 0;
-  transition: opacity 1.5s ease;
+  transition: opacity 1.5s;
 }
 
 .slide.active {
   opacity: 1;
 }
 
+/* ===== グラデ（ここがぼかし） ===== */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -70px;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0));
+  z-index: 5;
+}
+
 /* ===== コンテンツ ===== */
 .container {
-  padding: 40px 20px;
+  padding: 30px 20px;
 }
 
 .shop {
@@ -202,7 +209,6 @@ body {
 .fixed-bar {
   position: fixed;
   bottom: 0;
-  left: 0;
   width: 100%;
   display: flex;
   z-index: 9999;
@@ -214,10 +220,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
   color: white;
-  font-size: 16px;
   height: 60px;
+  text-decoration: none;
 }
 
 .insta-btn {
@@ -248,6 +253,7 @@ body {
 <!-- ヘッダー -->
 <div class="overlay-header">
   <h1>ヘアーズ旬</h1>
+
   <div class="hamburger" id="hamburger">
     <span></span><span></span><span></span>
   </div>
@@ -257,7 +263,7 @@ body {
 
 <!-- サイドバー -->
 <div id="sidebar">
-  <a href="index.html">ヘアーズ旬</a>
+  <a href="#">ヘアーズ旬</a>
   <a href="coconut.html">ココナッツ中山店</a>
   <a href="ryokuen.html">ビューティーライフ緑園店</a>
 </div>
@@ -273,29 +279,15 @@ body {
 
   <div class="shop">
     <h2>理容室 ヘアーズ旬</h2>
-    <p>神奈川県 横浜市 瀬谷区　[最寄り：三ツ境駅]</p>
+    <p>神奈川県 横浜市 瀬谷区</p>
     <a href="tel:0453677650" class="btn">電話で予約</a>
-  </div>
-
-  <h2>スタイルギャラリー</h2>
-  <div class="gallery">
-    <img src="style1.jpg">
-    <img src="style2.jpg">
-    <img src="style3.jpg">
-    <img src="style4.jpg">
-    <img src="style5.jpg">
-    <img src="style6.jpg">
   </div>
 
 </div>
 
 <div class="fixed-bar">
-  <a href="https://www.instagram.com/hairs.shun" target="_blank" class="insta-btn">
-    Instagramはこちら
-  </a>
-  <a href="tel:0453677650" class="tel-btn">
-    【ヘアーズ旬】📞電話で予約
-  </a>
+  <a href="https://www.instagram.com/hairs.shun" class="insta-btn">Instagram</a>
+  <a href="tel:0453677650" class="tel-btn">📞電話</a>
 </div>
 
 <script>
@@ -315,14 +307,14 @@ overlay.onclick = () => {
   overlay.classList.remove('active');
 };
 
-/* スライド */
-const slides = document.querySelectorAll('.slide');
-let current = 0;
+/* ===== スライド処理 ===== */
+let slides = document.querySelectorAll(".slide");
+let index = 0;
 
 setInterval(() => {
-  slides[current].classList.remove('active');
-  current = (current + 1) % slides.length;
-  slides[current].classList.add('active');
+  slides[index].classList.remove("active");
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
 }, 4000);
 </script>
 
