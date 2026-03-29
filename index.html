@@ -16,7 +16,7 @@ body {
   padding-bottom: 80px;
 }
 
-/* ===== ヘッダー ===== */
+/* ===== ヘッダー（固定・白） ===== */
 .overlay-header {
   position: fixed;
   top: 0;
@@ -25,23 +25,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  color: white;
+  background: white;
+  color: black;
   z-index: 10000;
-  transition: 0.3s;
-}
-
-.overlay-header.scrolled {
-  background: rgba(204,238,255,0.95);
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .overlay-header h1 {
   margin: 0;
   font-size: 26px;
-}
-
-.overlay-header.scrolled h1 {
   color: black;
 }
 
@@ -61,12 +53,8 @@ body {
 
 .hamburger span {
   height: 4px;
-  background: white;
-  transition: 0.3s;
-}
-
-.overlay-header.scrolled .hamburger span {
   background: black;
+  transition: 0.3s;
 }
 
 .hamburger.active span:nth-child(1) {
@@ -78,9 +66,6 @@ body {
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(6px,-6px);
 }
-.hamburger.active span {
-  background: black;
-}
 
 /* ===== サイドバー ===== */
 #sidebar {
@@ -91,7 +76,7 @@ body {
   height: 100%;
   background: white;
   transition: 0.4s;
-  z-index: 1000;
+  z-index: 9000;
   padding-top: 80px;
   text-align: left;
 }
@@ -105,16 +90,16 @@ body {
   color: black;
 }
 
-/* ===== 背景 ===== */
+/* ===== 背景（暗さ調整済み） ===== */
 #overlay {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.3);
   opacity: 0;
   visibility: hidden;
   transition: 0.3s;
-  z-index: 500;
+  z-index: 8000;
 }
 
 #overlay.active {
@@ -122,11 +107,12 @@ body {
   visibility: visible;
 }
 
-/* ===== スライド画像 ===== */
+/* ===== スライド ===== */
 .hero {
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 420px; /* ←少し縦長 */
+  margin-top: 70px; /* ←ヘッダー分 */
   overflow: hidden;
 }
 
@@ -147,7 +133,7 @@ body {
 
 /* ===== コンテンツ ===== */
 .container {
-  padding: 90px 20px 20px;
+  padding: 40px 20px;
 }
 
 .shop {
@@ -259,7 +245,8 @@ body {
 
 <body>
 
-<div class="overlay-header" id="header">
+<!-- ヘッダー -->
+<div class="overlay-header">
   <h1>ヘアーズ旬</h1>
   <div class="hamburger" id="hamburger">
     <span></span><span></span><span></span>
@@ -268,13 +255,14 @@ body {
 
 <div id="overlay"></div>
 
+<!-- サイドバー -->
 <div id="sidebar">
   <a href="index.html">ヘアーズ旬</a>
   <a href="coconut.html">ココナッツ中山店</a>
   <a href="ryokuen.html">ビューティーライフ緑園店</a>
 </div>
 
-<!-- ★ここが変更された部分 -->
+<!-- スライド -->
 <div class="hero">
   <img src="shun3.jpg" class="slide active">
   <img src="style1.jpg" class="slide">
@@ -299,11 +287,6 @@ body {
     <img src="style6.jpg">
   </div>
 
-  <h2>アクセス</h2>
-  <div class="map">
-    <iframe src="https://www.google.com/maps/embed?..."></iframe>
-  </div>
-
 </div>
 
 <div class="fixed-bar">
@@ -319,7 +302,6 @@ body {
 const hamburger = document.getElementById('hamburger');
 const sidebar = document.getElementById('sidebar');
 const overlay = document.getElementById('overlay');
-const header = document.getElementById('header');
 
 hamburger.onclick = () => {
   hamburger.classList.toggle('active');
@@ -333,15 +315,7 @@ overlay.onclick = () => {
   overlay.classList.remove('active');
 };
 
-window.addEventListener('scroll', () => {
-  if(window.scrollY > 50){
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-});
-
-/* ★スライド処理 */
+/* スライド */
 const slides = document.querySelectorAll('.slide');
 let current = 0;
 
