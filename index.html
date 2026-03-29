@@ -12,7 +12,6 @@ body {
   font-family: sans-serif;
   background-color: #f5f5f5;
   text-align: center;
-  overflow-x: hidden;
   padding-bottom: 80px;
 }
 
@@ -29,13 +28,11 @@ body {
   color: #333;
   z-index: 10000;
   backdrop-filter: blur(6px);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .overlay-header h1 {
   margin: 0;
   font-size: 24px;
-  font-weight: 500;
 }
 
 /* ===== ハンバーガー ===== */
@@ -55,7 +52,6 @@ body {
   height: 3px;
   background: #333;
   transition: 0.3s;
-  border-radius: 2px;
 }
 
 .hamburger.active span:nth-child(1) {
@@ -81,7 +77,6 @@ body {
   padding-top: 80px;
   text-align: left;
 }
-
 #sidebar.active { right: 0; }
 
 #sidebar a {
@@ -102,46 +97,58 @@ body {
   transition: 0.3s;
   z-index: 500;
 }
-
 #overlay.active {
   opacity: 1;
   visibility: visible;
 }
 
-/* ===== スライド ===== */
+/* ===== スライド（4:3） ===== */
 .hero {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3; /* ←これで4:3固定 */
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   margin-top: 70px;
-
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
 }
 
-.hero img {
-  display: block;
-}
-  
 .slide {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-  object-position: center 30%
-
+  object-position: center 30%;
   opacity: 0;
   transition: opacity 1.5s;
-
-  filter: brightness(0.9);
 }
 
 .slide.active {
   opacity: 1;
+}
+
+/* ===== ドット ===== */
+.dots {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: white;
+  transform: scale(1.2);
 }
 
 /* ===== コンテンツ ===== */
@@ -157,11 +164,6 @@ body {
   max-width: 400px;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.shop p {
-  font-size: 14px;
-  color: #555;
 }
 
 .btn {
@@ -180,7 +182,6 @@ body {
   bottom: 0;
   width: 100%;
   display: flex;
-  z-index: 9999;
 }
 
 .insta-btn,
@@ -197,22 +198,8 @@ body {
 .insta-btn {
   background: linear-gradient(45deg, #feda75, #d62976, #962fbf);
 }
-
 .tel-btn {
   background: #444;
-}
-
-.fixed-bar a:first-child {
-  border-top-left-radius: 15px;
-}
-.fixed-bar a:last-child {
-  border-top-right-radius: 15px;
-}
-
-@media(max-width:600px){
-  .gallery {
-    grid-template-columns: repeat(2,1fr);
-  }
 }
 </style>
 </head>
@@ -222,7 +209,6 @@ body {
 <!-- ヘッダー -->
 <div class="overlay-header">
   <h1>ヘアーズ旬</h1>
-
   <div class="hamburger" id="hamburger">
     <span></span><span></span><span></span>
   </div>
@@ -233,8 +219,8 @@ body {
 <!-- サイドバー -->
 <div id="sidebar">
   <a href="#">ヘアーズ旬</a>
-  <a href="coconut.html">ココナッツ中山店</a>
-  <a href="ryokuen.html">ビューティーライフ緑園店</a>
+  <a href="#">ココナッツ中山店</a>
+  <a href="#">ビューティーライフ緑園店</a>
 </div>
 
 <!-- スライド -->
@@ -242,6 +228,13 @@ body {
   <img src="shun3.jpg" class="slide active">
   <img src="shun1.jpg" class="slide">
   <img src="style2.jpg" class="slide">
+
+  <!-- ドット -->
+  <div class="dots">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
 </div>
 
 <div class="container">
@@ -253,7 +246,7 @@ body {
 </div>
 
 <div class="fixed-bar">
-  <a href="https://www.instagram.com/hairs.shun" class="insta-btn">Instagram</a>
+  <a href="#" class="insta-btn">Instagram</a>
   <a href="tel:0453677650" class="tel-btn">📞電話</a>
 </div>
 
@@ -274,13 +267,19 @@ overlay.onclick = () => {
   overlay.classList.remove('active');
 };
 
+/* ===== スライド処理 + ドット連動 ===== */
 let slides = document.querySelectorAll(".slide");
+let dots = document.querySelectorAll(".dot");
 let index = 0;
 
 setInterval(() => {
   slides[index].classList.remove("active");
+  dots[index].classList.remove("active");
+
   index = (index + 1) % slides.length;
+
   slides[index].classList.add("active");
+  dots[index].classList.add("active");
 }, 4000);
 </script>
 
