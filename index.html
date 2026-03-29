@@ -16,7 +16,7 @@ body {
   padding-bottom: 80px;
 }
 
-/* ===== ヘッダー（少し透明） ===== */
+/* ===== ヘッダー ===== */
 .overlay-header {
   position: fixed;
   top: 0;
@@ -25,10 +25,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.9);
   color: #333;
   z-index: 10000;
   backdrop-filter: blur(6px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .overlay-header h1 {
@@ -113,32 +114,28 @@ body {
   height: 60vh;
   overflow: hidden;
   margin-top: 70px;
+
+  /* 境目自然にする */
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .slide {
   position: absolute;
   width: 100%;
   height: 100%;
+
   object-fit: cover;
-  object-position: center 30%; /* ←ここ重要 */
+  object-position: center top; /* ←重要 */
+
   opacity: 0;
   transition: opacity 1.5s;
-  filter: brightness(0.85); /* ←少し暗く */
+
+  filter: brightness(0.9);
 }
 
 .slide.active {
   opacity: 1;
-}
-
-/* ===== グラデ ===== */
-.hero::before {
-  content: "";
-  position: absolute;
-  top: -70px;
-  width: 100%;
-  height: 120px;
-  background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0));
-  z-index: 5;
 }
 
 /* ===== コンテンツ ===== */
@@ -156,6 +153,11 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+.shop p {
+  font-size: 14px;
+  color: #555;
+}
+
 .btn {
   display: inline-block;
   margin-top: 10px;
@@ -166,12 +168,13 @@ body {
   text-decoration: none;
 }
 
-/* ===== 下バー ===== */
+/* ===== 下固定バー ===== */
 .fixed-bar {
   position: fixed;
   bottom: 0;
   width: 100%;
   display: flex;
+  z-index: 9999;
 }
 
 .insta-btn,
@@ -192,11 +195,25 @@ body {
 .tel-btn {
   background: #444;
 }
+
+.fixed-bar a:first-child {
+  border-top-left-radius: 15px;
+}
+.fixed-bar a:last-child {
+  border-top-right-radius: 15px;
+}
+
+@media(max-width:600px){
+  .gallery {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
 </style>
 </head>
 
 <body>
 
+<!-- ヘッダー -->
 <div class="overlay-header">
   <h1>ヘアーズ旬</h1>
 
@@ -207,12 +224,14 @@ body {
 
 <div id="overlay"></div>
 
+<!-- サイドバー -->
 <div id="sidebar">
   <a href="#">ヘアーズ旬</a>
   <a href="coconut.html">ココナッツ中山店</a>
   <a href="ryokuen.html">ビューティーライフ緑園店</a>
 </div>
 
+<!-- スライド -->
 <div class="hero">
   <img src="shun3.jpg" class="slide active">
   <img src="shun1.jpg" class="slide">
