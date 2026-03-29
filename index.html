@@ -29,6 +29,7 @@ body {
   color: white;
   z-index: 300;
   transition: 0.3s;
+  position: fixed;
 }
 
 .overlay-header.scrolled {
@@ -47,10 +48,10 @@ body {
 
 /* ===== ハンバーガー ===== */
 .hamburger {
-  position: fixed;
+  position: absolute;
   right: 20px;
-  top: 24%;
-  transform: none;
+  top: 50%;
+  transform: translateY(-50%);
   width: 30px;
   height: 22px;
   display: flex;
