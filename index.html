@@ -195,18 +195,26 @@ body {
 }
 
 /* ===== メニュー ===== */
-.menu-list {
-  text-align: left;
+.menu-section {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 0 auto 25px;
+  text-align: left;
+}
+
+.menu-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  border-left: 4px solid black;
+  padding-left: 8px;
 }
 
 .menu-item {
   display: flex;
   justify-content: space-between;
-  padding: 12px 0;
-  border-bottom: 1px solid #eee;
+  padding: 8px 0;
   font-size: 14px;
+  border-bottom: 1px solid #eee;
 }
 
 /* ===== マップ ===== */
@@ -302,14 +310,82 @@ body {
   </div>
 
   <!-- メニュー -->
-  <h2>メニュー</h2>
-  <div class="menu-list">
-    <div class="menu-item"><span>カット</span><span>¥</span></div>
-    <div class="menu-item"><span>カラー</span><span>¥</span></div>
-    <div class="menu-item"><span>パーマ</span><span>¥</span></div>
-    <div class="menu-item"><span>縮毛矯正</span><span>¥</span></div>
+ <h2>メニュー</h2>
+
+<!-- カット -->
+<div class="menu-section">
+  <div class="menu-title">カット</div>
+
+  <div class="menu-item">
+    <span>カット＋シャンプー</span><span>¥3,800</span>
+  </div>
+  <div class="menu-item">
+    <span>中学生</span><span>¥2,800</span>
+  </div>
+  <div class="menu-item">
+    <span>小学生</span><span>¥2,200</span>
+  </div>
+  <div class="menu-item">
+    <span>メンズ総合カット</span><span>¥3,900</span>
+  </div>
+</div>
+
+<!-- カラー -->
+<div class="menu-section">
+  <div class="menu-title">カラー</div>
+
+  <div class="menu-item">
+    <span>白髪染め</span><span>¥3,600〜</span>
+  </div>
+  <div class="menu-item">
+    <span>オシャレ染め</span><span>¥4,000〜</span>
+  </div>
+</div>
+
+<!-- パーマ -->
+<div class="menu-section">
+  <div class="menu-title">パーマ</div>
+
+  <div class="menu-item">
+    <span>シス</span><span>¥9,800〜</span>
+  </div>
+    <div class="menu-item">
+    <span>アイロンパーマ</span><span>¥9,800〜</span>
+  </div>
+    <div class="menu-item">
+    <span>濡れパン</span><span>¥9,800〜</span>
+  </div>
+    <div class="menu-item">
+    <span>香草カラー</span><span>¥4,000〜</span>
+  </div>
+    <div class="menu-item">
+    <span>マニキュア</span><span>¥4,600〜</span>
+  </div>
+</div>
+
+  <!-- 縮毛矯正 -->
+<div class="menu-section">
+  <div class="menu-title">縮毛矯正</div>
+
+  <div class="menu-item">
+    <span>縮毛矯正</span><span>¥15,000〜</span>
+  </div>
   </div>
 
+  <!-- その他 -->
+<div class="menu-section">
+  <div class="menu-title">その他</div>
+
+  <div class="menu-item">
+    <span>トリートメント</span><span>¥2,800〜</span>
+  </div>
+
+  <div class="menu-item">
+    <span>レディースシェービング</span><span>¥3,600〜</span>
+  </div>
+  </div>
+  
+  
   <h2>アクセス</h2>
   <div class="map">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3249.9108530614317!2d139.4948094757778!3d35.4570013726603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018571a9db8ef7f%3A0x8a3e34b54cb7959e!2z44CSMjQ2LTAwMjUg56We5aWI5bed55yM5qiq5rWc5biC54Cs6LC35Yy66Zi_5LmF5ZKM6KW_77yR5LiB55uu77yR77yS4oiS77yU77yQ!5e0!3m2!1sja!2sjp!4v1774793363893!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
