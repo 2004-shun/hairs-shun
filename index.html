@@ -139,7 +139,17 @@ body {
 
 /* ===== サムネイル ===== */
 
-.thumbnails {
+  .thumbnails {
+  position: static;
+  margin: 10px　auto;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  width: fit-content;
+}
+
+
+.thumbnail {
   width: 50px;
   height: 38px;
   object-fit: cover;
