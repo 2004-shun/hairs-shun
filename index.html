@@ -251,6 +251,15 @@ body {
   border-radius: 10px;
 }
 
+  .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+}
   
 
 /* ===== メニュー ===== */
@@ -405,7 +414,8 @@ body {
 </div>
 
     <!-- モーダル -->
-<div id="imgModal" class="modal" onclick="closeModal()">
+<div id="imgModal" class="modal">
+  <span class="close-btn" onclick="closeModal()">×</span>
   <img id="modalImg">
 </div>
     
