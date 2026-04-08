@@ -232,17 +232,17 @@ body {
     letter-spacing: 0.5px;
   }
 
-  modal {
+  .modal {
   display: none;
   position: fixed;
-  z-index: 10000;
-  left: 0;
+  z-index: 9999;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.8);
-  text-align: center;
-  padding-top: 60px;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal img {
@@ -251,47 +251,7 @@ body {
   border-radius: 10px;
 }
 
-.modal p {
-  color: white;
-  margin-top: 10px;
-}
-
-#close {
-  position: absolute;
-  top: 20px;
-  right: 25px;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-  const modal = document.getElementById("modal");
-const modalImg = document.getElementById("modal-img");
-const modalText = document.getElementById("modal-text");
-const closeBtn = document.getElementById("close");
-
-const galleryItems = document.querySelectorAll(".gallery-item");
-
-galleryItems.forEach(item => {
-  const img = item.querySelector("img");
-  const text = item.querySelector("p");
-
-  item.addEventListener("click", () => {
-    modal.style.display = "block";
-    modalImg.src = img.src;
-    modalText.textContent = text.textContent;
-  });
-});
-
-closeBtn.onclick = () => {
-  modal.style.display = "none";
-};
-
-modal.onclick = (e) => {
-  if(e.target === modal){
-    modal.style.display = "none";
-  }
-};
+  
 
 /* ===== メニュー ===== */
 .menu-section {
@@ -442,6 +402,11 @@ modal.onclick = (e) => {
       <p>〇〇</p>
   </div>
   
+</div>
+
+    <!-- モーダル -->
+<div id="imgModal" class="modal" onclick="closeModal()">
+  <img id="modalImg">
 </div>
     
 <br>
@@ -651,13 +616,6 @@ modal.onclick = (e) => {
   <a href="tel:0453677650" class="tel-btn">📞電話で予約</a>
 </div>
 
-<div id="modal" class="modal">
-  <span id="close">&times;</span>
-  <img id="modal-img">
-  <p id="modal-text"></p>
-</div>
-
-
 
 
   
@@ -727,6 +685,16 @@ function resetInterval(){
 }
 
 startSlide();
+
+  function openModal(img){
+  document.getElementById("imgModal").style.display = "flex";
+  document.getElementById("modalImg").src = img.src;
+}
+
+function closeModal(){
+  document.getElementById("imgModal").style.display = "none";
+}
+
 </script>
 
 </body>
