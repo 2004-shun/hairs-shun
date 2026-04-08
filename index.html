@@ -234,10 +234,7 @@ body {
 
   .modal-content {
     position: relative;
-    width: fit-content;
-    margin: auto;
-    top: 50%;
-    transform: tanslateY(-50%);
+    text-align: center;
   }
 
  .modal {
@@ -249,6 +246,10 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.8);
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 /* 中央寄せはこっちでやる */
@@ -266,6 +267,12 @@ display: block;
   color: white;
   z-index: 20001;
     cursor: pointer;
+}
+
+  #modalCaption {
+  color: white;
+  margin-top: 10px;
+  font-size: 14px;
 }
   
 
@@ -425,6 +432,8 @@ display: block;
   <div class="modal-content">
   <span class="close-btn" onclick="closeModal()">×</span>
   <img id="modalImg">
+    <p id="modalCaption"></p>
+  </div>
 </div>
     
 <br>
@@ -710,6 +719,9 @@ startSlide();
   const modal = document.getElementById("imgModal");
   modal.style.display = "block";
   document.getElementById("modalImg").src = img.src;
+
+   const caption = img.nextElementSibling.innerText;
+  document.getElementById("modalCaption").innerText = caption;
 }
 
 
