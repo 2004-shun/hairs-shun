@@ -207,6 +207,24 @@ body {
   flex-wrap: wrap;
 }
 
+/* ===== ギャラリー ===== */
+  
+  .gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2列 */
+  gap: 10px;
+  width: 92%;
+  max-width: 650px;
+  margin: 0 auto 20px;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* 正方形で統一 */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
 /* ===== メニュー ===== */
 .menu-section {
   max-width: 650px;
@@ -325,9 +343,20 @@ body {
       </a>
     </div> 
     <br>
+    
 
+<!-- ギャラリー -->
+<h2>店内の様子</h2>
 
-  
+<div class="gallery">
+  <img src="shunshop1.jpg">
+  <img src="shunshop2.jpg">
+  <img src="shunshop3.jpg">
+  <img src="shunshop4.jpg">
+</div>
+    
+<br>
+    
 <!-- メニュー -->
 <h2>メニュー</h2>
 
