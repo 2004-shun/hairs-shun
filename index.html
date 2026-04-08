@@ -419,7 +419,7 @@ body {
 </div>
 
     <!-- モーダル -->
-<div id="imgModal" class="modal">
+<div id="imgModal" class="modal" style="display: none;">
   <span class="close-btn" onclick="closeModal()">×</span>
   <img id="modalImg">
 </div>
@@ -708,7 +708,8 @@ startSlide();
 }
 
 function closeModal(){
-  document.getElementById("imgModal").style.display = "none";
+  const ,odal = document.getElementById("imgModal");
+    modal.style.display = "none";
 }
 
 </script>
