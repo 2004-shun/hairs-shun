@@ -678,6 +678,8 @@ slides.forEach((slide, i) => {
 const thumbnails = document.querySelectorAll(".thumbnail");
 
 function showSlide(i){
+  const thumbnails = document.querySelectorAll(".thumbnail");
+
   slides[index].classList.remove("active");
   thumbnails[index].classList.remove("active");
 
@@ -686,7 +688,7 @@ function showSlide(i){
   slides[index].classList.add("active");
   thumbnails[index].classList.add("active");
 }
-
+  
 function startSlide(){
   interval = setInterval(() => {
     let next = (index + 1) % slides.length;
@@ -701,14 +703,17 @@ function resetInterval(){
 
 startSlide();
 
-  function openModal(img){
-  const model = document.getElementById("imgModal");
-  document.getElementById("imgModal").style.display = "flex";
+ function openModal(img){
+  const modal = document.getElementById("imgModal");
+  modal.style.display = "flex";
   document.getElementById("modalImg").src = img.src;
 }
 
+
+
+
 function closeModal(){
-  const ,odal = document.getElementById("imgModal");
+  const modal = document.getElementById("imgModal");
     modal.style.display = "none";
 }
 
