@@ -247,7 +247,6 @@ body {
   height: 100%;
   background: rgba(0,0,0,0.8);
 
-   display: flex;
    justify-content: center;
    align-items: center;
 }
@@ -717,7 +716,7 @@ startSlide();
 
  function openModal(img){
   const modal = document.getElementById("imgModal");
-  modal.style.display = "block";
+  modal.style.display = "flex";
   document.getElementById("modalImg").src = img.src;
 
    const caption = img.nextElementSibling.innerText;
