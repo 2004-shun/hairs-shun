@@ -227,13 +227,25 @@ body {
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   box-sizing: border-box;
-  line-height: 3;
 
 }
+
+  
 
 .shop p {
   font-size: 14px;
   color: #555;
+}
+
+  .address {
+  display: block;
+}
+
+.nearest {
+  display: block;
+  margin-top: 6px;   /* ←間あける */
+  font-size: 13px;
+  color: #888;
 }
 
 .btn {
@@ -725,8 +737,10 @@ display: block;
   <div class="shop">
    <h2><span class="sub-title">美容室</span> <br>
      ココナッツ中山店</h2>
-    <p>[住所]　神奈川県 横浜市 緑区　中山町　4-31-3 清水ビル１階　<br>
-      [最寄り：中山駅]</p>
+     <p>
+  <span class="address">[住所] 神奈川県 横浜市 緑区 中山町 4-31-3 清水ビル１階</span>
+  <span class="nearest">[最寄り：中山駅]</span>
+</p>
     <a href="tel:0459357066" class="btn">電話で予約</a>
     <br>
     <a href="coconut.html" class="btn subbtn">詳細はこちら</a>
@@ -735,8 +749,10 @@ display: block;
   <div class="shop">
    <h2><span class="sub-title">美容室</span> <br>
      ビューティーライフ緑園店</h2>
-    <p>[住所]　神奈川県 横浜市 泉区　緑園　6-40-14　曽根ビル２階１号室　<br>
-      [最寄り：緑園都市駅・南万騎が原駅]</p>
+    <p>
+  <span class="address">[住所] 神奈川県 横浜市 泉区　緑園　6-40-14　曽根ビル２階１号室</span>
+  <span class="nearest">[最寄り：緑園都市駅・南万騎が原駅]</span>
+</p>
 
     <div class="btn-group">
       <a href="tel:0454108700" class="btn">電話で予約</a>
