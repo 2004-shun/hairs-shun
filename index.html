@@ -200,14 +200,16 @@ body {
 }
 
  .sub-title {
-  font-size: 20px;        
-  letter-spacing: 2px;
-  color: #666;
-  display: inline-block;
-  padding-bottom: 4px;
-  border-bottom: 2px solid #999;  /* ←下線 */
-  margin-right: 3px;        /* ←店名との間少し空ける */
-   padding-right: 20px;
+   content: "";
+  display: block;
+  width: 150%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #999, transparent);
+  margin-top: 6px;
+
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .shop {
@@ -219,6 +221,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   box-sizing: border-box;
+
 }
 
 .shop p {
