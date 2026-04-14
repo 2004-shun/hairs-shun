@@ -29,7 +29,7 @@ body {
   color: #333;
   z-index: 10000;
   backdrop-filter: blur(6px);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: none;
 }
 
 .overlay-header h1 {
@@ -468,7 +468,6 @@ display: block;
 <div id="sidebar">
   <a href="index.html">ヘアーズ旬</a>
 
-  <div class="sidebar-title">メニュー</div>
   <a href="#menu" class="sidebar-item">メニュー</a>
   <a href="#gallery" class="sidebar-item">店内の様子</a>
   <a href="#access" class="sidebar-item">アクセス</a>
@@ -886,6 +885,17 @@ function closeModal(){
   const modal = document.getElementById("imgModal");
     modal.style.display = "none";
 }
+
+  const sidebarLinks = document.querySelectorAll('#sidebar a');
+
+sidebarLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+});
+  
 
 </script>
 
