@@ -200,12 +200,23 @@ body {
 }
 
  .sub-title {
-   content: "";
+  display: inline-block;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.sub-title::after {
+  content: "";
   display: block;
   width: 150%;
   height: 2px;
   background: linear-gradient(to right, transparent, #999, transparent);
   margin-top: 6px;
+
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
   position: relative;
   left: 50%;
