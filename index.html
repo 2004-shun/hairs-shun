@@ -482,6 +482,33 @@ display: block;
 
 }
 
+
+  /*---!キャンペーン!---*/
+
+
+.price-line {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.old {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.arrow {
+  color: #666;
+}
+
+.new {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+}
+  
+  
 /* ===== マップ ===== */
 .map {
   margin: 20px auto;
@@ -759,9 +786,11 @@ display: block;
   <div class="menu-item">
     <div>
       <div>シス</div>
-      <div class="menu-desc">キャンペーン ¥8,800</div>
-    </div>
-    <span>¥9,800〜</span>
+
+      <div class="price-line">
+  <span class="old">¥9,800</span>
+  <span class="arrow">→</span>
+  <span class="new">¥8,800</span>
   </div>
 
   <div class="menu-item">
