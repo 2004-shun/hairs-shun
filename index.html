@@ -509,7 +509,10 @@ display: block;
   font-weight: nomal;
   font-size: 18px;
 }
-  
+
+  .menu-item > div:first-child {
+  flex: 1;
+}
   
 /* ===== マップ ===== */
 .map {
@@ -518,6 +521,22 @@ display: block;
   max-width: 600px;
 }
 
+.price-box {
+  text-align: right;
+}
+
+.campaign-label {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 4px;
+}
+
+.price-line {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+  
 .map iframe {
   width: 100%;
   border: 0;
@@ -789,6 +808,9 @@ display: block;
     <div>
       <div>シス</div>
       </div>
+
+    <div class="price-box">
+  <div class="campaign-label">キャンペーン</div>
 
       <div class="price-line">
   <span class="old">¥9,800</span>
