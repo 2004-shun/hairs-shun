@@ -482,6 +482,20 @@ display: block;
 
 }
 
+  summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+summary::after {
+  content: "▼";
+  float: right;
+  transition: 0.3s;
+}
+
+details[open] summary::after {
+  transform: rotate(180deg);
+}
 
   /*---!キャンペーン!---*/
 
@@ -702,8 +716,8 @@ display: block;
 <h2 id="menu">メニュー</h2>
 
 <!-- カット -->
-<div class="menu-section">
-  <div class="menu-title">カット</div>
+<details ="menu-section">
+  <summary ="menu-title">カット</summary>
 
   <div class="menu-item">
     <div>
@@ -749,7 +763,7 @@ display: block;
     </div>
     <span>¥4,000　</span>
   </div>
-</div>
+</details>
 
   <br>
 <!-- カラー -->
