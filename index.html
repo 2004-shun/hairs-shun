@@ -605,7 +605,15 @@ details[open] .menu-title::after {
   margin: 10px auto 0;
   display: block;
 }
-
+  
+/* スマホ用 */
+@media (max-width: 600px) {
+  .parking-img {
+    width: 280px;   /* ←スマホだけ少し小さく */
+    height: 170px;
+  }
+}
+  
 /* ===== 下固定バー ===== */
 .fixed-bar {
   position: fixed;
