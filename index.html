@@ -487,13 +487,18 @@ display: block;
   list-style: none;
 }
 
-summary::after {
+summary::-webkit-details-marker {
+  display: none;
+}
+
+  .menu-title::after {
   content: "▼";
   float: right;
   transition: 0.3s;
 }
 
-details[open] summary::after {
+/* 開いたら回転 */
+details[open] .menu-title::after {
   transform: rotate(180deg);
 }
 
