@@ -492,6 +492,21 @@ display: block;
 
 }
 
+  /* スタッフ折りたたみ */
+.staff-card details {
+  width: 100%;
+  text-align: center;
+}
+
+.staff-card summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.staff-card summary::-webkit-details-marker {
+  display: none;
+}
+
 @media (max-width: 600px) {
   .staff-container {
     grid-template-columns: 1fr;
@@ -506,6 +521,14 @@ display: block;
   .staff-card {
     width: 100%;
     max-width: 320px;
+  }
+
+    .staff-card details {
+    pointer-events: none;
+  }
+
+  .staff-card details[open] {
+    open: true;
   }
 }
   
@@ -892,30 +915,46 @@ details[open] .menu-title::after {
   <div class="staff-container">
 
     <div class="staff-card">
+        <details>
+           <summary>
       <img src="shunstaff1.jpg" alt="スタッフ1">
       <h3>松村　康男</h3>
+           </summary>
       <p>＜店長＞</p>
        <p>[施術]カット・カラー・パーマ・アイロンパーマ・縮毛矯正</p>
       <p>お客様に似合ったスタイルを提案します！</p>
+        </details>
     </div>
 
     <div class="staff-card">
+        <details>
+          <summary>
       <img src="shunstaff2.jpg" alt="スタッフ2">
       <h3>松村　裕子</h3>
+          </summary>
       <p>[施術]カラー・パーマ・縮毛矯正・レディースシェービング等</p>
        <p>リラックスして過ごしていただけるよう、丁寧な施術を大切にしています！</p>
+        </details>
     </div>
 
      <div class="staff-card">
+           <details>
+             <summary>
       <img src="shunstaff3.jpg" alt="スタッフ3">
       <h3>モコ</h3>
+             </summary>
        <p>１代目看板犬・♀・ラブラドールレトリーバー・2009〜2025（16歳8ヶ月）</p>
+           </details>
     </div>
 
  <div class="staff-card">
+   <details>
+      <summary>
       <img src="shunstaff4.jpg" alt="スタッフ4">
       <h3>バニラ</h3>
+      </summary>
        <p>２代目看板犬・♀・ゴールデンドゥードルF1b・2026/01/14〜</p>
+   </details>
     </div>
     
   </div>
