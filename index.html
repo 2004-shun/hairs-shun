@@ -492,21 +492,22 @@ display: block;
 
 }
 
-  @media (max-width: 600px) {
+@media (max-width: 600px) {
   .staff-container {
     grid-template-columns: 1fr;
     gap: 30px;
     padding: 0 20px;
-     justify-items: center;
+    justify-items: center;
+
+    max-width: 100%;   /* ←追加 */
+    margin: 30px auto 0; /* ←調整（左右中央） */
   }
 
   .staff-card {
     width: 100%;
     max-width: 320px;
-    margin: 0 auto;
   }
 }
-
   
 
 /* ===== メニュー ===== */
