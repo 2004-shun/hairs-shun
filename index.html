@@ -495,19 +495,21 @@ display: block;
   line-height: 1.4;
 }
 
-  .staff-info h3 {
+.staff-info h3 {
   font-size: 15px;
   margin: 0;
   font-weight: bold;
+  display: flex;         /* ← 横並びにする */
+  align-items: center;   /* ← 縦位置そろえる */
+  gap: 6px;              /* ← 名前と店長の間 */
 }
 
-/* 店長 */
 .staff-info .role {
-  font-size: inherit;  /* ←説明と同じサイズ */
-  color: inherit;      /* ←説明と同じ色 */
-  margin-right: 4px;
+  font-size: 12px;   /* ← 説明文と同じくらい */
+  color: #666;       /* ← 説明文と同じ色 */
+  font-weight: normal;
 }
-
+  
 /* ===== スマホ（1列） ===== */
 @media (max-width: 600px) {
   .staff-container {
@@ -921,7 +923,7 @@ details[open] .menu-title::after {
     <div class="staff-card">
       <img src="shunstaff1.jpg" alt="スタッフ1">
       <div class="staff-info">
-        <h3>松村 康男</h3> <span class="role">店長</span>
+        <h3>松村 康男 <span class="role">店長</span></h3>
         <p>[施術]カット・カラー・パーマ・アイロンパーマ・縮毛矯正</p>
         <p>お客様に似合ったスタイルを提案します！</p>
       </div>
@@ -939,7 +941,7 @@ details[open] .menu-title::after {
     <div class="staff-card">
       <img src="shunstaff3.jpg" alt="スタッフ3">
       <div class="staff-info">
-        <h3>モコ</h3> <span class="role">１代目看板犬</span>
+        <h3>モコ<span class="role">１代目看板犬</span></h3>
         <p>ラブラドールレトリーバー・♀・2009〜2025（16歳8ヶ月）</p>
       </div>
     </div>
@@ -947,7 +949,7 @@ details[open] .menu-title::after {
     <div class="staff-card">
       <img src="shunstaff4.jpg" alt="スタッフ4">
       <div class="staff-info">
-        <h3>バニラ</h3> <span class="role">２代目看板犬</span>
+        <h3>バニラ<span class="role">２代目看板犬</span></h3>
       　 <p>ゴールデンドゥードルF1b・♀・2026/01/14〜</p>
       </div>
     </div>
