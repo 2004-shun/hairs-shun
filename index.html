@@ -495,6 +495,20 @@ display: block;
   line-height: 1.4;
 }
 
+  .staff-info h3 {
+  font-size: 15px;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* 名前の横 */
+.staff-info .role {
+  margin-left: 6px;
+  font-size: inherit;   /* ←同じサイズ */
+  color: inherit;       /* ←同じ色 */
+  font-weight: normal;  /* ←ちょい軽くしてもOK */
+}
+
 /* ===== スマホ（1列） ===== */
 @media (max-width: 600px) {
   .staff-container {
@@ -909,7 +923,7 @@ details[open] .menu-title::after {
       <img src="shunstaff1.jpg" alt="スタッフ1">
       <div class="staff-info">
         <h3>松村 康男</h3>
-        <p>＜店長＞</p>
+         <span class="role">店長</span>
         <p>[施術]カット・カラー・パーマ・アイロンパーマ・縮毛矯正</p>
         <p>お客様に似合ったスタイルを提案します！</p>
       </div>
@@ -928,7 +942,8 @@ details[open] .menu-title::after {
       <img src="shunstaff3.jpg" alt="スタッフ3">
       <div class="staff-info">
         <h3>モコ</h3>
-        <p>１代目看板犬・♀・ラブラドールレトリーバー・2009〜2025（16歳8ヶ月）</p>
+         <span class="role">１代目看板犬</span>
+        <p>ラブラドールレトリーバー・♀・2009〜2025（16歳8ヶ月）</p>
       </div>
     </div>
 
@@ -936,7 +951,8 @@ details[open] .menu-title::after {
       <img src="shunstaff4.jpg" alt="スタッフ4">
       <div class="staff-info">
         <h3>バニラ</h3>
-        <p>２代目看板犬・♀・ゴールデンドゥードルF1b・2026/01/14〜</p>
+         <span class="role">２代目看板犬</span>
+        <p>ゴールデンドゥードルF1b・♀・2026/01/14〜</p>
       </div>
     </div>
 
