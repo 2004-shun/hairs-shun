@@ -435,43 +435,45 @@ display: block;
 
   
 
-/* ===== スタッフ（横並び・シンプル） ===== */
+/* ===== スタッフ ===== */
 
 .staff {
-  padding: 60px 20px;
+  padding: 60px 15px;
   text-align: center;
 }
 
 .staff-container {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
   max-width: 700px;
-  margin: 40px auto 0;
+  margin: 30px auto 0;
 }
 
-/* 1人分 */
+/* カード */
 .staff-card {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
 
-  padding: 12px 0;
-  border-bottom: 1px solid #eee;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
 
-  background: transparent;
-  border-radius: 0;
-  box-shadow: none;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+
+  width: 100%;
 }
 
 /* 画像 */
 .staff-card img {
-  width: 80px;
-  height: 80px;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
   object-fit: cover;
+  border: 2px solid #ddd;
   flex-shrink: 0;
-  border: none;
 }
 
 /* テキスト */
@@ -482,34 +484,49 @@ display: block;
 .staff-info h3 {
   font-size: 15px;
   margin: 0;
-  font-weight: bold;
 }
 
 .staff-info p {
-  font-size: 13px;
-  margin: 4px 0;
+  font-size: 12px;
   color: #666;
-  line-height: 1.5;
+  margin-top: 3px;
+  line-height: 1.4;
 }
 
-/* スマホ微調整 */
+/* PCでちょい広め */
+@media (min-width: 768px) {
+  .staff-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .staff-card {
+    padding: 15px;
+  }
+}
+
+/* スマホ */
 @media (max-width: 600px) {
   .staff-container {
-    gap: 20px;
-    padding: 0 10px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .staff-card {
+    padding: 10px;
   }
 
   .staff-card img {
-    width: 70px;
-    height: 70px;
+    width: 55px;
+    height: 55px;
   }
 
   .staff-info h3 {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .staff-info p {
-    font-size: 12px;
+    font-size: 11px;
   }
 }
   
