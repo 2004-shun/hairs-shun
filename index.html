@@ -435,100 +435,81 @@ display: block;
 
   
 
-  /* ===== スタッフ ===== */
-
+/* ===== スタッフ（横並び・シンプル） ===== */
 
 .staff {
-  padding: 80px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
 .staff-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 50px;
-  max-width: 900px;
-  margin: 50px auto 0;
-}
-
-.staff-card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 16px;
-  padding: 30px 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: 0.3s;
-   display: flex;
+  display: flex;
   flex-direction: column;
+  gap: 25px;
+  max-width: 700px;
+  margin: 40px auto 0;
+}
+
+/* 1人分 */
+.staff-card {
+  display: flex;
   align-items: center;
+  gap: 15px;
+
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-.staff-card:hover {
-  transform: translateY(-5px);
-}
-
+/* 画像 */
 .staff-card img {
-  width: 140px;
-  height: 140px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 15px;
-  border: 3px solid #ddd;
+  flex-shrink: 0;
+  border: none;
 }
 
-.staff-card h3 {
-  font-size: 18px;
-  margin: 10px 0 5px;
-  display: inline-block;
-  border-bottom: 2px solid #333; /* ←ここが“下線アクセント” */
-  padding-bottom: 3px;
+/* テキスト */
+.staff-info {
+  text-align: left;
 }
 
-.staff-card p {
-  font-size: 14px;
+.staff-info h3 {
+  font-size: 15px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.staff-info p {
+  font-size: 13px;
+  margin: 4px 0;
   color: #666;
-  margin-top: 8px;
-    line-height: 1.6;
-
+  line-height: 1.5;
 }
 
-  /* スタッフ折りたたみ */
-.staff-card details {
-  width: 100%;
-  text-align: center;
-}
-
-.staff-card summary {
-  cursor: pointer;
-  list-style: none;
-}
-
-.staff-card summary::-webkit-details-marker {
-  display: none;
-}
-
+/* スマホ微調整 */
 @media (max-width: 600px) {
   .staff-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    padding: 0 20px;
-    justify-items: center;
-
-    max-width: 100%;   /* ←追加 */
-    margin: 30px auto 0; /* ←調整（左右中央） */
+    gap: 20px;
+    padding: 0 10px;
   }
 
-  .staff-card {
-    width: 100%;
-    max-width: 140px;
+  .staff-card img {
+    width: 70px;
+    height: 70px;
   }
 
-    .staff-card details {
-    pointer-events: none;
+  .staff-info h3 {
+    font-size: 14px;
   }
 
-  .staff-card details[open] {
-    open: true;
+  .staff-info p {
+    font-size: 12px;
   }
 }
   
@@ -909,54 +890,49 @@ details[open] .menu-title::after {
   </div>
 </div>
 
+
+
+    
 <section class="staff" id="staff">
   <h2>STAFF</h2>
 
   <div class="staff-container">
 
     <div class="staff-card">
-        <details>
-           <summary>
       <img src="shunstaff1.jpg" alt="スタッフ1">
-      <h3>松村　康男</h3>
-           </summary>
-      <p>＜店長＞</p>
-       <p>[施術]カット・カラー・パーマ・アイロンパーマ・縮毛矯正</p>
-      <p>お客様に似合ったスタイルを提案します！</p>
-        </details>
+      <div class="staff-info">
+        <h3>松村 康男</h3>
+        <p>＜店長＞</p>
+        <p>[施術]カット・カラー・パーマ・アイロンパーマ・縮毛矯正</p>
+        <p>お客様に似合ったスタイルを提案します！</p>
+      </div>
     </div>
 
     <div class="staff-card">
-        <details>
-          <summary>
       <img src="shunstaff2.jpg" alt="スタッフ2">
-      <h3>松村　裕子</h3>
-          </summary>
-      <p>[施術]カラー・パーマ・縮毛矯正・レディースシェービング等</p>
-       <p>リラックスして過ごしていただけるよう、丁寧な施術を大切にしています！</p>
-        </details>
+      <div class="staff-info">
+        <h3>松村 裕子</h3>
+        <p>[施術]カラー・パーマ・縮毛矯正・レディースシェービング等</p>
+        <p>リラックスして過ごしていただけるよう、丁寧な施術を大切にしています！</p>
+      </div>
     </div>
 
-     <div class="staff-card">
-           <details>
-             <summary>
+    <div class="staff-card">
       <img src="shunstaff3.jpg" alt="スタッフ3">
-      <h3>モコ</h3>
-             </summary>
-       <p>１代目看板犬・♀・ラブラドールレトリーバー・2009〜2025（16歳8ヶ月）</p>
-           </details>
+      <div class="staff-info">
+        <h3>モコ</h3>
+        <p>１代目看板犬・♀・ラブラドールレトリーバー・2009〜2025（16歳8ヶ月）</p>
+      </div>
     </div>
 
- <div class="staff-card">
-   <details>
-      <summary>
+    <div class="staff-card">
       <img src="shunstaff4.jpg" alt="スタッフ4">
-      <h3>バニラ</h3>
-      </summary>
-       <p>２代目看板犬・♀・ゴールデンドゥードルF1b・2026/01/14〜</p>
-   </details>
+      <div class="staff-info">
+        <h3>バニラ</h3>
+        <p>２代目看板犬・♀・ゴールデンドゥードルF1b・2026/01/14〜</p>
+      </div>
     </div>
-    
+
   </div>
 </section>
     <br>
