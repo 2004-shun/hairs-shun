@@ -551,6 +551,15 @@ display: block;
   line-height: 1.2;        /* ←これが超重要（詰まる） */
 }
 
+  .menu-title::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #999, transparent);
+  margin: 6px auto 0;
+}
+
 .menu-item {
   display: flex;
   justify-content: space-between;
@@ -967,8 +976,8 @@ details[open] .menu-title::after {
     <br>
     
 <!-- メニュー -->
+    <div class="menu-box">
 <h2 id="menu">メニュー</h2>
-<div class="menu-box">
     
 <!-- カット -->
 <details class ="menu-section">
