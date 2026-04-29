@@ -535,19 +535,29 @@ display: block;
   
 
 /* ===== メニュー ===== */
-.menu-section {
-  max-width: 650px;
-  margin: 0 auto 6px;
-  text-align: left;
+#menu {
+  display: block;
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 10px;
 }
   
-  .menu-section::after {
+#menu::after {
   content: "";
   display: block;
   width: 60%;
   height: 2px;
   background: linear-gradient(to right, transparent, #999, transparent);
   margin: 6px auto 0;
+}
+
+  
+.menu-section {
+  max-width: 650px;
+  margin: 0 auto 6px;
+  text-align: left;
 }
 
 .menu-title {
