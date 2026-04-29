@@ -540,6 +540,15 @@ display: block;
   margin: 0 auto 6px;
   text-align: left;
 }
+  
+  .menu-section::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #999, transparent);
+  margin: 6px auto 0;
+}
 
 .menu-title {
   font-size: 21px;
@@ -549,15 +558,6 @@ display: block;
   padding-left: 8px;
   padding: 2px 0 2px 8px;  /* ←上下を超最小に */
   line-height: 1.2;        /* ←これが超重要（詰まる） */
-}
-
-  .menu-title::after {
-  content: "";
-  display: block;
-  width: 60%;
-  height: 2px;
-  background: linear-gradient(to right, transparent, #999, transparent);
-  margin: 6px auto 0;
 }
 
 .menu-item {
