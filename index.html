@@ -460,11 +460,11 @@ display: block;
   border: 1px solid #eee;
   border-radius: 12px;
 
-  padding: 16px 12px;
+  padding: 14px 12px; /* ←上下左右を統一 */
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 
   width: 100%;
-  box-sizing: border-box; /* ←これ超重要（被り防止） */
+  box-sizing: border-box;
 }
 
 /* 画像 */
@@ -480,47 +480,43 @@ display: block;
 /* テキスト */
 .staff-info {
   text-align: left;
-  display: block;
-  gap: 3px;
+  display: flex;              /* ←これ超重要 */
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;                   /* ←全部の余白これで統一 */
 }
 
+/* 名前 */
 .staff-info h3 {
   font-size: 15px;
   margin: 0;
   font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  gap: 6px; /* 名前と店長の間 */
 }
 
+/* 説明 */
 .staff-info p {
   font-size: 12px;
   color: #666;
-  margin-top: 0;
-  line-height: 1.4;
+  margin: 0;                 /* ←これ重要（余白リセット） */
+  line-height: 1.5;
 }
 
-.staff-info h3 {
-  font-size: 15px;
-  margin: 0;
-  font-weight: bold;
-  display: flex;         /* ← 横並びにする */
-  align-items: center;   /* ← 縦位置そろえる */
-  gap: 6px;              /* ← 名前と店長の間 */
-}
-
+/* 店長 */
 .staff-info .role {
-  font-size: 12px;   /* ← 説明文と同じくらい */
-  color: #666;       /* ← 説明文と同じ色 */
+  font-size: 12px;
+  color: #666;
   font-weight: normal;
 }
-  
+
 /* ===== スマホ（1列） ===== */
 @media (max-width: 600px) {
   .staff-container {
-    grid-template-columns: 1fr; /* ←1人ずつ */
+    grid-template-columns: 1fr;
     gap: 12px;
-  }
-
-  .staff-card {
-    max-width: 100%;
   }
 
   .staff-card img {
