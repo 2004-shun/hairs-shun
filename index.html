@@ -90,6 +90,12 @@ boby {
   padding-bottom: 80px;
 }
 
+#sidebar::after {
+  content: "";
+  display: block;
+  height: 80px; /* ←固定バーよりちょい大きめ */
+}
+  
 #sidebar.active { right: 0; }
 
 #sidebar a {
