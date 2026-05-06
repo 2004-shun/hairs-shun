@@ -346,9 +346,16 @@ boby {
   display: flex;
   gap: 10px;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
+.btn-group .btn {
+  flex: 1;              /* ←均等に広げる */
+  text-align: center;
+  font-size: 13px;      /* ←少し小さく（任意） */
+  padding: 10px 5px;    /* ←横を少し詰める */
+}
+  
 /* ===== ギャラリー ===== */
   
   .gallery {
